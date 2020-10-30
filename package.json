@@ -1,0 +1,8 @@
+{
+  "name": "catmash",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:beInDev/catmash.git",
+  "author": "Wilfried EVIEUX <wilfried.ev@gmail.com>",
+  "license": "See LICENSE"
+}
