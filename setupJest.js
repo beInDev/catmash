@@ -1,2 +1,2 @@
 // Imports jest dom library for easier testing
-import '@testing-library/jest-dom/extend-expect'
+import "@testing-library/jest-dom/extend-expect";
