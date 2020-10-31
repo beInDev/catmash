@@ -46,12 +46,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
+const Home = () => {
   const styles = useStyles();
   return (
     <div className={styles.container}>
       <Head>
-        <title>CatMash 🐱</title>
+        <title>CatMash</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -77,15 +77,18 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   await getDatabase();
   await seedCats();
   const model = Cat.getModel();
   const cats = await model.find(null, ["url", "id"]);
-
   return {
-    props: { cats: cats.map(({ id, url }) => ({ id, url })) },
+    props: {
+      cats: cats.map(({ id, url }) => ({ id, url })),
+    },
   };
 };

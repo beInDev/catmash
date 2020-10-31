@@ -16,16 +16,18 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: "#fff",
+      // main: "#eee",
+      main: "#000",
     },
     secondary: {
-      main: "#0055f3",
+      main: "#e8c27b",
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: "#242424",
+      // default: "#242424",
+      default: "#fff",
     },
   },
 });
