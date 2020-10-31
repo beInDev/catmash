@@ -1,7 +1,14 @@
-// import App from 'next/app'
+import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
+import theme from "assets/theme";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function App({ Component, pageProps }) {
+  return (
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline>
+        <Component {...pageProps} />
+      </CssBaseline>
+    </MuiThemeProvider>
+  );
 }
 
-export default MyApp;
+export default App;
