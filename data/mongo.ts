@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import "utils/env.utils";
 
 export default async function getDatabase() {
   if (!mongoose.connection.readyState) {
