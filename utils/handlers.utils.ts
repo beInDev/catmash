@@ -1,4 +1,5 @@
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import logger from "utils/logger.utils";
 
 export type HandlerMethod =
   | "GET"
@@ -11,8 +12,14 @@ export type HandlerMethod =
   | "TRACE"
   | "PATCH";
 
-export type HttpError = Error & { statusCode: number };
-
+/**
+ * Wraps the specified function in a generic function for factoring api requesting handlers
+ *
+ * @export
+ * @param {HandlerMethod[]} methods The methods the route accepts
+ * @param {NextApiHandler} handler The handler that should execute the request
+ * @returns {NextApiHandler}
+ */
 export function createHandler(
   methods: HandlerMethod[],
   handler: NextApiHandler
@@ -24,9 +31,9 @@ export function createHandler(
         return;
       }
 
-      return handler(req, res);
+      await handler(req, res);
     } catch (error) {
-      // logger.error(error)
+      logger.error(error);
       if (error.statusCode) {
         res.status(error.statusCode).send(error.message);
         return;
