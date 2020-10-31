@@ -1,9 +1,10 @@
+import Head from "next/head";
+import { Link, makeStyles, Typography } from "@material-ui/core";
+import Vote from "app/components/Vote";
+import getDatabase from "data/mongo";
 import seedCats from "data/seeds/cats";
 import { GetStaticProps } from "next";
-import Head from "next/head";
 import * as Cat from "data/models/cat";
-import getDatabase from "data/mongo";
-import { Link, makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = () => {
+const Home = ({ cats }) => {
   const styles = useStyles();
   return (
     <div className={styles.container}>
@@ -64,11 +65,13 @@ const Home = () => {
           Probably!
         </Typography>
         <Typography className={styles.title} variant="h2" color="primary">
-          Let's find out!
+          Let's find out! Who's cuter?
         </Typography>
       </header>
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <Vote cats={cats} />
+      </main>
 
       <footer className={styles.footer}>
         <Link href="/results" variant="h2">
@@ -78,8 +81,6 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   await getDatabase();
@@ -92,3 +93,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+export default Home;
