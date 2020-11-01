@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { createHandler } from "utils/handlers.utils";
-import * as Cat from "data/models/cat";
+import { NextApiRequest, NextApiResponse } from 'next';
+import { createHandler } from 'utils/handlers.utils';
+import * as Cat from 'data/models/cat';
 
 /**
  * Endpoint to retrieve the next contestants after a match or at first user arrival.
@@ -9,7 +9,7 @@ import * as Cat from "data/models/cat";
  * @param {NextApiResponse} res
  */
 export default createHandler(
-  ["GET"],
+  ['GET'],
   async (req: NextApiRequest, res: NextApiResponse) => {
     const cats = await Cat.getModel().aggregate([{ $sample: { size: 2 } }]);
 

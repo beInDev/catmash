@@ -1,8 +1,8 @@
-import { CircularProgress, Grid, Typography } from "@material-ui/core";
+import { CircularProgress, Grid, Typography } from '@material-ui/core';
 
 const Spinner = ({ text }: { text: string }) => {
   return (
-    <Grid container justify={"center"} alignItems={"center"} spacing={4}>
+    <Grid container justify={'center'} alignItems={'center'} spacing={4}>
       <Grid item xs={3}>
         <CircularProgress color="secondary" />
       </Grid>

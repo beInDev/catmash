@@ -1,17 +1,17 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    textAlign: "center",
-    width: "100%",
+    textAlign: 'center',
+    width: '100%',
   },
   mainTitle: {
     backgroundColor: theme.palette.secondary.main,
     borderBottom: `2px solid ${theme.palette.secondary.dark}`,
-    marginBottom: "20px",
+    marginBottom: '20px',
   },
   title: {
-    textAlign: "center",
+    textAlign: 'center',
   },
 }));
 

@@ -1,11 +1,11 @@
-import { Cat } from "app/components/Vote/Vote";
-import { Reducer } from "react";
+import { Cat } from 'app/components/Vote/Vote';
+import { Reducer } from 'react';
 
 export enum VoteActionTypes {
-  GET_NEXT = "GET_NEXT",
-  VOTE = "VOTE",
-  GET_NEXT_RESPONSE = "GET_NEXT_RESPONSE",
-  VOTE_RESPONSE = "VOTE_RESPONSE",
+  GET_NEXT = 'GET_NEXT',
+  VOTE = 'VOTE',
+  GET_NEXT_RESPONSE = 'GET_NEXT_RESPONSE',
+  VOTE_RESPONSE = 'VOTE_RESPONSE',
 }
 
 export interface VoteState {

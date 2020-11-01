@@ -1,5 +1,5 @@
-import voteReducer from "app/reducers/voteReducer";
-import { combineReducers } from "redux";
+import voteReducer from 'app/reducers/voteReducer';
+import { combineReducers } from 'redux';
 
 const combinedReducers = combineReducers({ vote: voteReducer });
 

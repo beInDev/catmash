@@ -1,9 +1,9 @@
-import { Grid, makeStyles } from "@material-ui/core";
-import { Pagination } from "@material-ui/lab";
-import CatItem from "app/components/Results/CatItem";
-import { Cat } from "app/components/Vote/Vote";
-import * as CatModel from "data/models/cat";
-import { useState } from "react";
+import { Grid, makeStyles } from '@material-ui/core';
+import { Pagination } from '@material-ui/lab';
+import CatItem from 'app/components/Results/CatItem';
+import { Cat } from 'app/components/Vote/Vote';
+import * as CatModel from 'data/models/cat';
+import { useState } from 'react';
 
 interface Props {
   cats: Array<Cat>;
@@ -11,17 +11,17 @@ interface Props {
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: "100%",
+    width: '100%',
   },
   grid: {
-    width: "100%",
+    width: '100%',
   },
 }));
 
 function getPaginatedCats(cats: Array<Cat>, page: number) {
   const pageSize = 10;
   const offset = (page - 1) * pageSize;
-  let items = [];
+  const items = [];
   for (let index = 0; index < pageSize; index++) {
     const catIndex = index + offset;
     items.push(<CatItem cat={cats[catIndex]} rank={catIndex + 1} />);
@@ -39,7 +39,7 @@ const Results = ({ cats }: Props) => {
         <Grid item className={styles.grid}>
           <Grid
             container
-            direction={"column"}
+            direction={'column'}
             className={styles.grid}
             justify="center"
           >

@@ -1,4 +1,4 @@
-declare module "elo-rating" {
+declare module 'elo-rating' {
   export function calculate(
     playerScore: number,
     opponentScore: number,

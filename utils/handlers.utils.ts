@@ -1,16 +1,16 @@
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
-import logger from "utils/logger.utils";
+import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
+import logger from 'utils/logger.utils';
 
 export type HandlerMethod =
-  | "GET"
-  | "HEAD"
-  | "POST"
-  | "PUT"
-  | "DELETE"
-  | "CONNECT"
-  | "OPTIONS"
-  | "TRACE"
-  | "PATCH";
+  | 'GET'
+  | 'HEAD'
+  | 'POST'
+  | 'PUT'
+  | 'DELETE'
+  | 'CONNECT'
+  | 'OPTIONS'
+  | 'TRACE'
+  | 'PATCH';
 
 /**
  * Wraps the specified function in a generic function for factoring api requesting handlers
@@ -27,7 +27,7 @@ export function createHandler(
   return async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       if (!methods.includes(req.method as HandlerMethod)) {
-        res.status(405).send("405 - Method not allowed");
+        res.status(405).send('405 - Method not allowed');
         return;
       }
 

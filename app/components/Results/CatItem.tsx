@@ -1,53 +1,53 @@
-import { Avatar, Grid, makeStyles, Typography } from "@material-ui/core";
-import { Cat } from "../Vote/Vote";
+import { Avatar, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Cat } from '../Vote/Vote';
 
 const useStyles = makeStyles((theme) => ({
   // Avatars
   anyPlaceAvatar: {
     height: 75,
     width: 75,
-    textAlign: "center",
+    textAlign: 'center',
     borderColor: theme.palette.secondary.dark,
-    borderWidth: "3px",
-    borderStyle: "solid",
+    borderWidth: '3px',
+    borderStyle: 'solid',
   },
   firstPlaceAvatar: {
     height: 150,
     width: 150,
-    textAlign: "center",
-    borderColor: "#F2D16B",
-    borderWidth: "6px",
-    borderStyle: "solid",
+    textAlign: 'center',
+    borderColor: '#F2D16B',
+    borderWidth: '6px',
+    borderStyle: 'solid',
   },
   secondPlaceAvatar: {
     height: 125,
     width: 125,
-    textAlign: "center",
-    borderColor: "#C0C0C0",
-    borderWidth: "5px",
-    borderStyle: "solid",
+    textAlign: 'center',
+    borderColor: '#C0C0C0',
+    borderWidth: '5px',
+    borderStyle: 'solid',
   },
   thirdPlaceAvatar: {
     height: 100,
     width: 100,
-    textAlign: "center",
-    borderColor: "#cd7f32",
-    borderWidth: "4px",
-    borderStyle: "solid",
+    textAlign: 'center',
+    borderColor: '#cd7f32',
+    borderWidth: '4px',
+    borderStyle: 'solid',
   },
 
   // Texts
   anyPlaceText: {
-    fontSize: "1em",
+    fontSize: '1em',
   },
   firstPlaceText: {
-    fontSize: "1.5em",
+    fontSize: '1.5em',
   },
   secondPlaceText: {
-    fontSize: "1.3em",
+    fontSize: '1.3em',
   },
   thirdPlaceText: {
-    fontSize: "1.2em",
+    fontSize: '1.2em',
   },
   bold: {
     fontWeight: 400,
@@ -77,7 +77,7 @@ const CatItem = ({
   let rankStyle = {
     avatar: styles.anyPlaceAvatar,
     text: styles.anyPlaceText,
-    bold: "",
+    bold: '',
   };
   switch (rank) {
     case 1:
@@ -106,11 +106,11 @@ const CatItem = ({
     <Grid
       container
       key={id}
-      direction={"row"}
+      direction={'row'}
       spacing={1}
       alignItems="center"
       justify="center"
-      style={{ marginBottom: "5px" }}
+      style={{ marginBottom: '5px' }}
     >
       <Grid item className={rankStyle.text} xs={6} md={2} xl={1}>
         <Typography
@@ -121,7 +121,7 @@ const CatItem = ({
       <Grid item xs={6} md={2} xl={2}>
         <Grid
           container
-          justify={"center"}
+          justify={'center'}
           alignContent="center"
           alignItems="center"
         >

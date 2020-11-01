@@ -1,14 +1,14 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   container: {
     margin: 0,
     padding: 0,
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 }));
 
@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
  * @param {*} { ...props }
  * @returns
  */
-const Container = ({ ...props }) => {
+const Container = ({ ...props }: Record<string, any>): JSX.Element => {
   const styles = useStyles();
   return <div className={styles.container} {...props} />;
 };

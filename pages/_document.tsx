@@ -1,11 +1,11 @@
 // Taken from MUI integration example https://github.com/mui-org/material-ui/blob/master/examples/nextjs/pages/_document.js
-import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets } from "@material-ui/core/styles";
-import theme from "app/assets/theme";
+import React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheets } from '@material-ui/core/styles';
+import theme from 'app/assets/theme';
 
 export default class StyledDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>

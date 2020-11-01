@@ -1,8 +1,8 @@
-import * as Cat from "data/models/cat";
-import { NextApiRequest, NextApiResponse } from "next";
-import { createHandler } from "utils/handlers.utils";
-import { createError } from "utils/http.utils";
-import elo from "elo-rating";
+import * as Cat from 'data/models/cat';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { createHandler } from 'utils/handlers.utils';
+import { createError } from 'utils/http.utils';
+import elo from 'elo-rating';
 
 /**
  * Update the cats' scores with the corresponding value calculated from the match.
@@ -44,15 +44,15 @@ async function updateScore(winnerId: string, loserId: string): Promise<void> {
  * @param {NextApiResponse} res
  */
 export default createHandler(
-  ["POST"],
+  ['POST'],
   async (req: NextApiRequest, res: NextApiResponse) => {
     const { winnerId, loserId } = req.body;
     if (!winnerId || !loserId) {
-      throw createError(400, "Missing winnerId or loserId");
+      throw createError(400, 'Missing winnerId or loserId');
     }
 
     await updateScore(winnerId, loserId);
-    res.status(200).send("OK");
+    res.status(200).send('OK');
     return;
   }
 );

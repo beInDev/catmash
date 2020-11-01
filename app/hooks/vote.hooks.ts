@@ -1,16 +1,16 @@
-import { State } from "app/reducers";
+import { State } from 'app/reducers';
 import {
   VoteAction,
   VoteActionPayload,
   VoteActionTypes,
   VoteState,
-} from "app/reducers/voteReducer";
-import axios from "axios";
-import { Dispatch } from "react";
-import { useDispatch, useSelector } from "react-redux";
+} from 'app/reducers/voteReducer';
+import axios from 'axios';
+import { Dispatch } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-const VOTE_PATH_URL = "/api/vote";
-const NEXT_PATH_URL = "/api/vote/next";
+const VOTE_PATH_URL = '/api/vote';
+const NEXT_PATH_URL = '/api/vote/next';
 
 const voteAction = (dispatch: Dispatch<VoteAction>) => (
   type: VoteActionTypes,

@@ -1,4 +1,4 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, { Document } from 'mongoose';
 
 export interface ICat extends Document {
   url: string;
@@ -25,8 +25,8 @@ const schema = new mongoose.Schema({
  */
 export function getModel(): mongoose.Model<ICat> {
   try {
-    return mongoose.model<ICat>("Cat");
+    return mongoose.model<ICat>('Cat');
   } catch {
-    return mongoose.model<ICat>("Cat", schema);
+    return mongoose.model<ICat>('Cat', schema);
   }
 }

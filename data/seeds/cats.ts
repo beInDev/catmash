@@ -1,5 +1,5 @@
-import cats from "./cats.json";
-import * as Cat from "data/models/cat";
+import cats from './cats.json';
+import * as Cat from 'data/models/cat';
 
 /**
  * Seends all cats from the JSON to the database if they do not exist
