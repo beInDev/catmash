@@ -15,18 +15,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = () => {
+const Header = (): JSX.Element => {
   const styles = useStyles();
   return (
     <header className={styles.header}>
-      <Typography className={styles.mainTitle} variant="h1" color="primary">
+      <Typography className={styles.mainTitle} variant='h1' color='primary'>
         C A T M A S H 🐱
       </Typography>
-      <Typography className={styles.title} variant="h2" color="primary">
+      <Typography className={styles.title} variant='h2' color='primary'>
         Are all of them cute? Yes. Is one of them cuter than the others?
         Probably!
       </Typography>
-      <Typography className={styles.title} variant="h2" color="primary">
+      <Typography className={styles.title} variant='h2' color='primary'>
         Let's find out! Who's cuter?
       </Typography>
     </header>

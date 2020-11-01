@@ -72,7 +72,7 @@ const CatItem = ({
 }: {
   cat: Cat;
   rank: number;
-}) => {
+}): JSX.Element => {
   const styles = useStyles();
   let rankStyle = {
     avatar: styles.anyPlaceAvatar,
@@ -108,13 +108,13 @@ const CatItem = ({
       key={id}
       direction={'row'}
       spacing={1}
-      alignItems="center"
-      justify="center"
+      alignItems='center'
+      justify='center'
       style={{ marginBottom: '5px' }}
     >
       <Grid item className={rankStyle.text} xs={6} md={2} xl={1}>
         <Typography
-          variant="h1"
+          variant='h1'
           className={rankStyle.bold}
         >{`#${rank}`}</Typography>
       </Grid>
@@ -122,14 +122,14 @@ const CatItem = ({
         <Grid
           container
           justify={'center'}
-          alignContent="center"
-          alignItems="center"
+          alignContent='center'
+          alignItems='center'
         >
           <Avatar alt={`cat${id}`} src={url} className={rankStyle.avatar} />
         </Grid>
       </Grid>
       <Grid item className={rankStyle.text} xs={12} md={4} xl={2}>
-        <Typography variant="h2">
+        <Typography variant='h2'>
           Score: {score} ({((matchesWon || 1) / (matchesLost || 1)).toFixed(2)})
         </Typography>
       </Grid>

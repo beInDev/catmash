@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
  * @param {*} props
  * @returns
  */
-const Main = (props: any) => {
+const Main = (props: Record<string, any>): JSX.Element => {
   const styles = useStyles();
   return <main className={styles.main} {...props} />;
 };

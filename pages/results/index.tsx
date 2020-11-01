@@ -6,7 +6,7 @@ import * as CatModel from 'data/models/cat';
 import { useState } from 'react';
 
 interface Props {
-  cats: Array<Cat>;
+  cats: Cat[];
 }
 
 const useStyles = makeStyles(() => ({
@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function getPaginatedCats(cats: Array<Cat>, page: number) {
+function getPaginatedCats(cats: Cat[], page: number) {
   const pageSize = 10;
   const offset = (page - 1) * pageSize;
   const items = [];
@@ -30,39 +30,37 @@ function getPaginatedCats(cats: Array<Cat>, page: number) {
   return items;
 }
 
-const Results = ({ cats }: Props) => {
+const Results = ({ cats }: Props): JSX.Element => {
   const [page, setPage] = useState(1);
   const styles = useStyles();
   return (
-    <>
-      <Grid container direction="column">
-        <Grid item className={styles.grid}>
-          <Grid
-            container
-            direction={'column'}
-            className={styles.grid}
-            justify="center"
-          >
-            {getPaginatedCats(cats, page)}
-          </Grid>
+    <Grid container direction='column'>
+      <Grid item className={styles.grid}>
+        <Grid
+          container
+          direction={'column'}
+          className={styles.grid}
+          justify='center'
+        >
+          {getPaginatedCats(cats, page)}
         </Grid>
-        <Grid item className={styles.grid}>
-          <Grid container justify="center">
-            <Grid item xs={9} md={6} lg={6} xl={3}>
-              <Pagination
-                count={10}
-                color="secondary"
-                onChange={(_, newPage) => setPage(newPage)}
-              />
-            </Grid>
+      </Grid>
+      <Grid item className={styles.grid}>
+        <Grid container justify='center'>
+          <Grid item xs={9} md={6} lg={6} xl={3}>
+            <Pagination
+              count={10}
+              color='secondary'
+              onChange={(_, newPage) => setPage(newPage)}
+            />
           </Grid>
         </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 };
 
-export async function getServerSideProps(_context) {
+export async function getServerSideProps(): Promise<{ props: Props }> {
   const cats: Cat[] = await CatModel.getModel().find().sort({ score: -1 });
 
   return {

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
  * @param {*} { img, id }
  * @returns
  */
-const VoteCard = ({ img, id }) => {
+const VoteCard = ({ img, id }): JSX.Element => {
   const { isSubmittingVote, isFetchingNext } = useSelector<State, VoteState>(
     ({ vote }) => vote
   );
@@ -43,7 +43,7 @@ const VoteCard = ({ img, id }) => {
         disabled={isSubmittingVote || isFetchingNext}
       >
         <CardContent className={classes.card}>
-          <CardMedia className={classes.media} image={img} title="cat :3" />
+          <CardMedia className={classes.media} image={img} title='cat :3' />
         </CardContent>
       </CardActionArea>
     </Card>

@@ -21,7 +21,7 @@ const Footer = (): JSX.Element => {
   const isVotePage = router.pathname === votePath;
   return (
     <footer className={styles.footer}>
-      <Link href={isVotePage ? resultsPath : votePath} variant="h2">
+      <Link href={isVotePage ? resultsPath : votePath} variant='h2'>
         {isVotePage ? 'See the results!' : 'Vote!'}
       </Link>
     </footer>
