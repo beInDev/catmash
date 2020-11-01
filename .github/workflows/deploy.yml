@@ -17,6 +17,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
+            source ~/.zshrc
             cd /opt/catmash
             git pull
             yarn
