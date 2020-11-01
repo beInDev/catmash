@@ -8,9 +8,11 @@ const useStyles = makeStyles((theme) => ({
   mainTitle: {
     backgroundColor: theme.palette.secondary.main,
     borderBottom: `2px solid ${theme.palette.secondary.dark}`,
-    marginBottom: '20px',
+    marginBottom: '1vh',
+    fontSize: '3vmax',
   },
   title: {
+    fontSize: '2vmax',
     textAlign: 'center',
   },
 }));

@@ -60,7 +60,7 @@ export default function Vote({ cats }: Props): JSX.Element {
   return (
     <Fragment>
       {error && <Error error={error} />}
-      <Grid container direction={'row'} spacing={5} justify={'center'}>
+      <Grid container direction={'row'} spacing={2} justify={'center'}>
         <Grid item>
           <VoteCard img={catA.url} id={catA.id} />
         </Grid>

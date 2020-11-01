@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: 'solid',
   },
   media: {
-    height: 420,
-    width: 420,
+    height: '40vmin',
+    width: '40vmin',
   },
 }));
 
