@@ -2,7 +2,7 @@
 
 exports[`renders homepage unchanged 1`] = `
 <div
-  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-5 MuiGrid-justify-xs-center"
+  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
 >
   <div
     className="MuiGrid-root MuiGrid-item"
