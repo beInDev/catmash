@@ -7,7 +7,7 @@ import * as Cat from 'data/models/cat';
  * @export
  * @returns
  */
-export default async function seedCats() {
+export default async function seedCats(): Promise<Cat.ICat[]> {
   const model = Cat.getModel();
   return Promise.all(
     cats.images.map(({ id, url }: { id: string; url: string }) =>
@@ -24,6 +24,7 @@ export default async function seedCats() {
         // options
         {
           upsert: true,
+          useFindAndModify: false,
         }
       )
     )

@@ -10,6 +10,8 @@ export default async function getDatabase() {
         user: process.env.MONGO_USER,
       },
       dbName: process.env.MONGO_DB,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
   }
   return mongoose;

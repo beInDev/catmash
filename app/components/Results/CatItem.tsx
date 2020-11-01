@@ -105,7 +105,7 @@ const CatItem = ({
   return (
     <Grid
       container
-      key={id}
+      key={`catItem-${id}`}
       direction={'row'}
       spacing={1}
       alignItems='center'
