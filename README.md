@@ -33,3 +33,15 @@ This is a project done in 48 hours to illustrate technical skills on a Node.js s
 The aim is to elect the cutest cat by voting between two cats each time.
 
 Rating system is based on the famous [ELO rating system](https://en.wikipedia.org/wiki/Elo_rating_system).
+
+### Screens
+
+#### Vote
+
+![vote](https://i.ibb.co/nsLK60S/vote.png "Vote page")
+
+
+#### Results
+
+![results](https://i.ibb.co/Bw0TFdb/results.png "Results page")
+
