@@ -1,33 +1,11 @@
-import Head from "next/head";
-import { Link, makeStyles, Typography } from "@material-ui/core";
-import Vote from "app/components/Vote";
+import { makeStyles } from "@material-ui/core";
+import Vote from "app/components/Vote/Vote";
 import getDatabase from "data/mongo";
 import seedCats from "data/seeds/cats";
 import { GetStaticProps } from "next";
 import * as Cat from "data/models/cat";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    margin: 0,
-    padding: 0,
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  header: {
-    textAlign: "center",
-    width: "100%",
-  },
-  mainTitle: {
-    backgroundColor: theme.palette.secondary.main,
-    borderBottom: `2px solid ${theme.palette.secondary.dark}`,
-    marginBottom: "20px",
-  },
-  title: {
-    textAlign: "center",
-  },
+const useStyles = makeStyles(() => ({
   main: {
     padding: "5rem 0",
     flex: "1",
@@ -36,49 +14,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  footer: {
-    width: "100%",
-    height: "100px",
-    borderTop: `1px solid ${theme.palette.secondary.dark}`,
-    backgroundColor: theme.palette.secondary.main,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
 }));
 
 const Home = ({ cats }) => {
   const styles = useStyles();
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>CatMash</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <header className={styles.header}>
-        <Typography className={styles.mainTitle} variant="h1" color="primary">
-          C A T M A S H 🐱
-        </Typography>
-        <Typography className={styles.title} variant="h2" color="primary">
-          Are all of them cute? Yes. Is one of them cuter than the others?
-          Probably!
-        </Typography>
-        <Typography className={styles.title} variant="h2" color="primary">
-          Let's find out! Who's cuter?
-        </Typography>
-      </header>
-
-      <main className={styles.main}>
-        <Vote cats={cats} />
-      </main>
-
-      <footer className={styles.footer}>
-        <Link href="/results" variant="h2">
-          See the results!
-        </Link>
-      </footer>
-    </div>
+    <main className={styles.main}>
+      <Vote cats={cats} />
+    </main>
   );
 };
 

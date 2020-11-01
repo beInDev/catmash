@@ -4,13 +4,15 @@ import { State } from "app/reducers";
 import { VoteState } from "app/reducers/voteReducer";
 import React, { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Error from "./Error";
-import Spinner from "./Spinner";
+import Error from "../Error";
+import Spinner from "../Spinner";
 import VoteCard from "./VoteCard";
 
 export interface Cat {
   url: string;
   id: string;
+  score: number;
+  matches: number;
 }
 
 interface Props {

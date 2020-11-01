@@ -1,4 +1,4 @@
-import { Cat } from "app/components/Vote";
+import { Cat } from "app/components/Vote/Vote";
 import { Reducer } from "react";
 
 export enum VoteActionTypes {
