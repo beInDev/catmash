@@ -38,10 +38,14 @@ Rating system is based on the famous [ELO rating system](https://en.wikipedia.or
 
 #### Vote
 
-![vote](https://i.ibb.co/nsLK60S/vote.png "Vote page")
+<p align="center">
+  <img src="https://i.ibb.co/nsLK60S/vote.png" alt="vote" title="Vote page">
+</p>
 
 
 #### Results
 
-![results](https://i.ibb.co/Bw0TFdb/results.png "Results page")
+<p align="center">
+  <img src="https://i.ibb.co/Bw0TFdb/results.png" alt="results" title="Results page">
+</p>
 
