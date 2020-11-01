@@ -9,6 +9,7 @@ import Header from "app/components/Layout/Header";
 import Footer from "app/components/Layout/Footer";
 import Container from "app/components/Layout/Container";
 import { useEffect } from "react";
+import Main from "app/components/Layout/Main";
 
 const store = createStore(reducers);
 
@@ -31,7 +32,9 @@ function App({ Component, pageProps }) {
         <CssBaseline>
           <Container>
             <Header />
-            <Component {...pageProps} />
+            <Main>
+              <Component {...pageProps} />
+            </Main>
             <Footer />
           </Container>
         </CssBaseline>

@@ -12,7 +12,8 @@ export interface Cat {
   url: string;
   id: string;
   score: number;
-  matches: number;
+  matchesWon: number;
+  matchesLost: number;
 }
 
 interface Props {
@@ -53,11 +54,11 @@ export default function Vote({ cats }: Props) {
   return (
     <Fragment>
       {error && <Error error={error} />}
-      <Grid container direction={"row"} spacing={8}>
-        <Grid item xs={6}>
+      <Grid container direction={"row"} spacing={5} justify={"center"}>
+        <Grid item>
           <VoteCard img={catA.url} id={catA.id} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item>
           <VoteCard img={catB.url} id={catB.id} />
         </Grid>
       </Grid>
