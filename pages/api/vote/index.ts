@@ -26,12 +26,12 @@ async function updateScore(winnerId: string, loserId: string): Promise<void> {
 
   await winner.update({
     score: playerRating,
-    matches: winner.matchesWon + 1,
+    matchesWon: winner.matchesWon + 1,
   });
 
   await loser.update({
     score: opponentRating,
-    matches: loser.matchesLost + 1,
+    matchesLost: loser.matchesLost + 1,
   });
 }
 

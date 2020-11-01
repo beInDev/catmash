@@ -1,62 +1,78 @@
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Link,
-  makeStyles,
-} from "@material-ui/core";
+import { Avatar, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Pagination } from "@material-ui/lab";
+import CatItem from "app/components/Results/CatItem";
 import { Cat } from "app/components/Vote/Vote";
 import * as CatModel from "data/models/cat";
+import { useState } from "react";
 
 interface Props {
   cats: Array<Cat>;
 }
 
-const useStyles = makeStyles((theme) => ({
-  card: {
-    padding: "0",
-    borderColor: theme.palette.secondary.main,
-    borderWidth: "6px",
-    borderStyle: "solid",
+const useStyles = makeStyles(() => ({
+  root: {
+    width: "100%",
   },
-  media: {
-    height: 105,
-    width: 105,
+  grid: {
+    width: "100%",
   },
 }));
 
+function getPaginatedCats(cats: Array<Cat>, page: number) {
+  const pageSize = 10;
+  const offset = (page - 1) * pageSize;
+  let items = [];
+  for (let index = 0; index < pageSize; index++) {
+    const catIndex = index + offset;
+    items.push(<CatItem cat={cats[catIndex]} rank={catIndex + 1} />);
+  }
+
+  return items;
+}
+
 const Results = ({ cats }: Props) => {
+  const [page, setPage] = useState(1);
   const styles = useStyles();
   return (
     <>
-      {cats &&
-        cats.map(({ url, id }) => (
-          <Card key={id}>
-            <Link href={`results/${id}`}>
-              <CardContent className={styles.card}>
-                <CardMedia
-                  className={styles.media}
-                  image={url}
-                  title="cat :3"
-                />
-              </CardContent>
-            </Link>
-          </Card>
-        ))}
+      <Grid container direction="column">
+        <Grid item className={styles.grid}>
+          <Grid
+            container
+            direction={"column"}
+            className={styles.grid}
+            justify="center"
+          >
+            {getPaginatedCats(cats, page)}
+          </Grid>
+        </Grid>
+        <Grid item className={styles.grid}>
+          <Grid container justify="center">
+            <Grid item xs={9} md={6} lg={6} xl={3}>
+              <Pagination
+                count={10}
+                color="secondary"
+                onChange={(_, newPage) => setPage(newPage)}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </>
   );
 };
 
 export async function getServerSideProps(_context) {
-  const cats = await CatModel.getModel().find();
+  const cats: Cat[] = await CatModel.getModel().find().sort({ score: -1 });
 
   return {
     props: {
-      cats: cats.map(({ id, url, score, matches }) => ({
+      cats: cats.map(({ id, url, score, matchesWon, matchesLost }) => ({
         id,
         url,
         score,
-        matches,
+        matchesWon,
+        matchesLost,
       })),
     },
   };
