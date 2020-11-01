@@ -8,6 +8,7 @@ const Home = ({ cats }) => {
   return <Vote cats={cats} />;
 };
 
+// Since we have a fixed cat list, build the page with cats list only once.
 export const getStaticProps: GetStaticProps = async () => {
   await getDatabase();
   await seedCats();

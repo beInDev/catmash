@@ -25,6 +25,13 @@ function getContestantCat(cats: Array<Cat>, contestant: Cat) {
   return cat;
 }
 
+/**
+ * Main vote component. It fetches and displays each contestants pairs.
+ *
+ * @export
+ * @param {Props} { cats }
+ * @returns
+ */
 export default function Vote({ cats }: Props) {
   const { contestants, isSubmittingVote, isFetchingNext, error } = useSelector<
     State,

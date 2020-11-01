@@ -24,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * Component to display the contestant cats
+ *
+ * @param {*} { img, id }
+ * @returns
+ */
 const VoteCard = ({ img, id }) => {
   const { isSubmittingVote, isFetchingNext } = useSelector<State, VoteState>(
     ({ vote }) => vote

@@ -54,6 +54,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * Display each cat in the vote results list. Custom styles are applied according to ranks
+ *
+ * @param {{
+ *   cat: Cat;
+ *   rank: number;
+ * }} {
+ *   cat: { id, url, score, matchesLost, matchesWon },
+ *   rank,
+ * }
+ * @returns
+ */
 const CatItem = ({
   cat: { id, url, score, matchesLost, matchesWon },
   rank,

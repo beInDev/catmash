@@ -8,6 +8,7 @@ export interface ICat extends Document {
   matchesLost: number;
 }
 
+// Mongoose Schema definition
 const schema = new mongoose.Schema({
   url: { type: String, required: true },
   id: { type: String, required: true },
@@ -16,7 +17,13 @@ const schema = new mongoose.Schema({
   matchesLost: { type: Number, required: true, default: 0 },
 });
 
-export function getModel() {
+/**
+ * Returns the defined mongoose model for Cat
+ *
+ * @export
+ * @returns {mongoose.Model<ICat>}
+ */
+export function getModel(): mongoose.Model<ICat> {
   try {
     return mongoose.model<ICat>("Cat");
   } catch {

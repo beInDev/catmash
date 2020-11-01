@@ -5,7 +5,9 @@ import { createError } from "utils/http.utils";
 import elo from "elo-rating";
 
 /**
- * Update the cat's score with the corresponding value from the match
+ * Update the cats' scores with the corresponding value calculated from the match.
+ *
+ * The score is calculated using the ELO system https://en.wikipedia.org/wiki/Elo_rating_system
  *
  * @param {string} id
  * @param {boolean} winner

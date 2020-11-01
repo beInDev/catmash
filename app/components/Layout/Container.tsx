@@ -12,6 +12,12 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+/**
+ * Container element for the page layout (top order)
+ *
+ * @param {*} { ...props }
+ * @returns
+ */
 const Container = ({ ...props }) => {
   const styles = useStyles();
   return <div className={styles.container} {...props} />;

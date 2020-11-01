@@ -1,4 +1,4 @@
-import { Avatar, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import { Pagination } from "@material-ui/lab";
 import CatItem from "app/components/Results/CatItem";
 import { Cat } from "app/components/Vote/Vote";

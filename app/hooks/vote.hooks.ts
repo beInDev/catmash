@@ -30,6 +30,7 @@ export function useVote() {
   const dispatch = useDispatch();
   const action = voteAction(dispatch);
 
+  // Retrieves the next cat pair for vote
   const getNextContestants = async () => {
     if (isFetchingNext || isSubmittingVote) {
       return;
@@ -45,6 +46,7 @@ export function useVote() {
     }
   };
 
+  // Elects a winner
   const voteFor = async (winnerId: string) => {
     if (isFetchingNext || isSubmittingVote) {
       return;

@@ -12,6 +12,12 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+/**
+ * Main page content, should be between Heander and Footer, contains Component
+ *
+ * @param {*} props
+ * @returns
+ */
 const Main = (props: any) => {
   const styles = useStyles();
   return <main className={styles.main} {...props} />;
