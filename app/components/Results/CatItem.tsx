@@ -1,27 +1,39 @@
 import { Avatar, Grid, makeStyles, Typography } from "@material-ui/core";
 import { Cat } from "../Vote/Vote";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   // Avatars
   anyPlaceAvatar: {
     height: 75,
     width: 75,
     textAlign: "center",
+    borderColor: theme.palette.secondary.dark,
+    borderWidth: "3px",
+    borderStyle: "solid",
   },
   firstPlaceAvatar: {
     height: 150,
     width: 150,
     textAlign: "center",
+    borderColor: "#F2D16B",
+    borderWidth: "6px",
+    borderStyle: "solid",
   },
   secondPlaceAvatar: {
     height: 125,
     width: 125,
     textAlign: "center",
+    borderColor: "#C0C0C0",
+    borderWidth: "5px",
+    borderStyle: "solid",
   },
   thirdPlaceAvatar: {
     height: 100,
     width: 100,
     textAlign: "center",
+    borderColor: "#cd7f32",
+    borderWidth: "4px",
+    borderStyle: "solid",
   },
 
   // Texts
