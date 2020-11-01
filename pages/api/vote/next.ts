@@ -13,6 +13,7 @@ export default createHandler(
   async (req: NextApiRequest, res: NextApiResponse) => {
     const cats = await Cat.getModel().aggregate([{ $sample: { size: 2 } }]);
 
+    // TODO: find a better way than randomly sampling the collection
     res.status(200).send(cats.map(({ id, url }) => ({ id, url })));
     return;
   }

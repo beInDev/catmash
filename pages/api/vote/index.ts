@@ -2,6 +2,7 @@ import * as Cat from "data/models/cat";
 import { NextApiRequest, NextApiResponse } from "next";
 import { createHandler } from "utils/handlers.utils";
 import { createError } from "utils/http.utils";
+import elo from "elo-rating";
 
 /**
  * Update the cat's score with the corresponding value from the match
@@ -10,14 +11,27 @@ import { createError } from "utils/http.utils";
  * @param {boolean} winner
  * @returns {Promise<void>}
  */
-async function updateScore(id: string, winner: boolean): Promise<void> {
-  const cat = await Cat.getModel().findOne({
-    id,
+async function updateScore(winnerId: string, loserId: string): Promise<void> {
+  const winner = await Cat.getModel().findOne({
+    id: winnerId,
+  });
+  const loser = await Cat.getModel().findOne({
+    id: loserId,
   });
 
-  await cat.update({
-    score: cat.score + (winner ? 1 : -1),
-    matches: cat.matches + 1,
+  const { playerRating, opponentRating } = elo.calculate(
+    winner.score,
+    loser.score
+  );
+
+  await winner.update({
+    score: playerRating,
+    matches: winner.matchesWon + 1,
+  });
+
+  await loser.update({
+    score: opponentRating,
+    matches: loser.matchesLost + 1,
   });
 }
 
@@ -35,8 +49,7 @@ export default createHandler(
       throw createError(400, "Missing winnerId or loserId");
     }
 
-    await updateScore(winnerId, true);
-    await updateScore(loserId, false);
+    await updateScore(winnerId, loserId);
     res.status(200).send("OK");
     return;
   }
