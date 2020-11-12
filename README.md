@@ -34,7 +34,7 @@ The aim is to elect the cutest cat by voting between two cats each time.
 
 Rating system is based on the famous [ELO rating system](https://en.wikipedia.org/wiki/Elo_rating_system).
 
-[Demo](https://catmash.luckies.fun/) 
+[Demo](https://catmash.fr/) 
 
 ### Screens
 
